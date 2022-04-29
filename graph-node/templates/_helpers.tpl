@@ -66,24 +66,3 @@ combine environment variables with postgres credentials
 - name: {{ $k }} TODO merge arrays of hashes
 {{- end }}
 {{- end }}
-            - name: postgres_host
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-credentials
-                  key: host
-            - name: postgres_user
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-credentials
-                  key: user
-            - name: postgres_pass
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-credentials
-                  key: password
-            - name: postgres_db
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-credentials
-                  key: graph_db
-

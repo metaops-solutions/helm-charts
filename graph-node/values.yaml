@@ -11,7 +11,7 @@ image:
   tag: "latest"
 
 postgresCredentials:
-  postgres_host: temp-postgres-postgresql
+  postgres_host: postgres-postgresql
   postgres_user: graph
   postgres_pass: graph
   postgres_db: graph
