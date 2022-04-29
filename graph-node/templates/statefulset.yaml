@@ -1,0 +1,119 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "graph-node.fullname" . }}
+  labels:
+    {{- include "graph-node.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "graph-node.selectorLabels" . | nindent 6 }}
+  serviceName: {{ include "graph-node.fullname" . }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "graph-node.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "graph-node.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+          - containerPort: {{ .Values.httpPort }}
+            name: http
+            protocol: TCP
+          - containerPort: {{ .Values.rpcPort }}
+            name: json-rpc
+            protocol: TCP
+          - containerPort: {{ .Values.metricsPort }}
+            name: metrics
+            protocol: TCP
+          - containerPort: {{ .Values.statusPort }}
+            name: status
+            protocol: TCP
+          env: 
+            - name: node_id
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.name
+            - name: GRAPH_LOG
+              value: "{{ .Values.statefulSet.env.GRAPH_LOG }}"
+            - name: RUST_LOG
+              value: "{{ .Values.statefulSet.env.RUST_LOG }}"
+            - name: BLOCK_INGESTOR
+              value: "{{ .Values.statefulSet.env.BLOCK_INGESTOR }}"
+            - name: GRAPH_ETH_CALL_GAS
+              value: "{{ .Values.statefulSet.env.GRAPH_ETH_CALL_GAS }}"
+            - name: GRAPH_GETH_ETH_CALL_ERRORS
+              value: "{{ .Values.statefulSet.env.GRAPH_GETH_ETH_CALL_ERRORS }}"
+            - name: ETHEREUM_TRACE_STREAM_STEP_SIZE
+              value: "{{ .Values.statefulSet.env.ETHEREUM_TRACE_STREAM_STEP_SIZE }}"
+            - name: ETHEREUM_BLOCK_BATCH_SIZE
+              value: "{{ .Values.statefulSet.env.ETHEREUM_BLOCK_BATCH_SIZE }}"
+            - name: ETHEREUM_RPC_MAX_PARALLEL_REQUESTS
+              value: "{{ .Values.statefulSet.env.ETHEREUM_RPC_MAX_PARALLEL_REQUESTS }}"
+            - name: GRAPH_ETHEREUM_MAX_BLOCK_RANGE_SIZE
+              value: "{{ .Values.statefulSet.env.GRAPH_ETHEREUM_MAX_BLOCK_RANGE_SIZE }}"
+            - name: GRAPH_ETHEREUM_TARGET_TRIGGERS_PER_BLOCK_RANGE
+              value: "{{ .Values.statefulSet.env.GRAPH_ETHEREUM_TARGET_TRIGGERS_PER_BLOCK_RANGE }}"
+            - name: GRAPH_KILL_IF_UNRESPONSIVE
+              value: "{{ .Values.statefulSet.env.GRAPH_KILL_IF_UNRESPONSIVE }}"
+            - name: GRAPH_ALLOW_NON_DETERMINISTIC_FULLTEXT_SEARCH
+              value: "{{ .Values.statefulSet.env.GRAPH_ALLOW_NON_DETERMINISTIC_FULLTEXT_SEARCH }}"
+            - name: EXPERIMENTAL_SUBGRAPH_VERSION_SWITCHING_MODE
+              value: "{{ .Values.statefulSet.env.EXPERIMENTAL_SUBGRAPH_VERSION_SWITCHING_MODE }}"
+            - name: node_role
+              value: "{{ .Values.statefulSet.env.node_role }}"
+            - name: ipfs
+              value: "{{ .Values.statefulSet.env.ipfs }}"
+            - name: ethereum
+              value: "{{ .Values.statefulSet.env.ethereum }}"
+            - name: postgres_host
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: postgres_host
+            - name: postgres_user
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: postgres_user
+            - name: postgres_pass
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: postgres_pass
+            - name: postgres_db
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: postgres_db
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
