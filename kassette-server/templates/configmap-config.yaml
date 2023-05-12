@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "kassette-server.fullname" . }}-config
+  labels:
+    {{- include "kassette-server.labels" . | nindent 4 }}
+data:
+  config.yaml: |
+    {{ toString .Values.config | nindent 4 }}
