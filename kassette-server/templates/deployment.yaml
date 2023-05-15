@@ -41,7 +41,7 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
           - name: config
-            mountPath: "/config.yaml"
+            mountPath: "/opt/kassette-ai/config.yaml"
             subPath: config.yaml
       volumes:
       - name: config
