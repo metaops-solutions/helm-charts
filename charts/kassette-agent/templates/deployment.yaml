@@ -35,21 +35,13 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8080
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
           - name: config
-            mountPath: "/config.yaml"
+            mountPath: "/opt/kassette-ai/config.yaml"
             subPath: config.yaml
       volumes:
       - name: config
