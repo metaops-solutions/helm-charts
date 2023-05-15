@@ -14,6 +14,16 @@ entries:
   kassette-agent:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2023-05-15T15:27:29.707537601Z"
+    description: A Helm chart for Kubernetes
+    digest: 3a53ea0f3da67fbe8bd97d972da309505662825c6cf198b42554be5a2424b728
+    name: kassette-agent
+    type: application
+    urls:
+    - https://github.com/metaops-solutions/helm-charts/releases/download/kassette-agent-0.1.1/kassette-agent-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2023-05-15T10:58:57.871733129Z"
     description: A Helm chart for Kubernetes
     digest: 7a9c0801a0795708226c0906c7783771e97ad52e02f1009201efa4c17d6bdf11
@@ -83,4 +93,4 @@ entries:
     urls:
     - https://github.com/metaops-solutions/helm-charts/releases/download/kassette-server-0.1.0/kassette-server-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-15T12:30:41.351560845Z"
+generated: "2023-05-15T15:27:29.707549601Z"
