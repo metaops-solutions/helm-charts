@@ -1,0 +1,41 @@
+apiVersion: v1
+entries:
+  graph-node:
+  - apiVersion: v2
+    appVersion: 0.26.0
+    created: "2023-05-15T10:58:57.699375259Z"
+    description: A Helm chart for Kubernetes to manage deployment of graph-node https://github.com/graphprotocol/graph-node
+    digest: 256f89638ae1e44df49ddc37cdb193f68e4beb01bd36a13647ef47543e2aa4d6
+    name: graph-node
+    type: application
+    urls:
+    - https://github.com/metaops-solutions/helm-charts/releases/download/graph-node-0.1.0/graph-node-0.1.0.tgz
+    version: 0.1.0
+  kassette-agent:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2023-05-15T10:58:57.871733129Z"
+    description: A Helm chart for Kubernetes
+    digest: 7a9c0801a0795708226c0906c7783771e97ad52e02f1009201efa4c17d6bdf11
+    name: kassette-agent
+    type: application
+    urls:
+    - https://github.com/metaops-solutions/helm-charts/releases/download/kassette-agent-0.1.0/kassette-agent-0.1.0.tgz
+    version: 0.1.0
+  kassette-server:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2023-05-15T10:58:58.056225121Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.4.2
+    description: A Helm chart for Kubernetes
+    digest: 7d82602553353f1a77d3f2fd4ae0a25cc70af2bfecd9725682c5299fc87ff062
+    name: kassette-server
+    type: application
+    urls:
+    - https://github.com/metaops-solutions/helm-charts/releases/download/kassette-server-0.1.0/kassette-server-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-05-15T10:58:58.056236922Z"
