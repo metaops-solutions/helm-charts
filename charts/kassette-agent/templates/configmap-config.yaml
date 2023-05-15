@@ -7,4 +7,4 @@ metadata:
     {{- include "kassette-agent.labels" . | nindent 4 }}
 data:
   config.yaml: |
-    {{ toString .Values.config | nindent 4 }}
+    {{- toYaml .Values.config | nindent 4 }}
