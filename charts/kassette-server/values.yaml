@@ -13,7 +13,7 @@ image:
 
 config:
   database:
-    host: "{{ .Release.Name }}-postgresql-headless"
+    host: localhost
     user: kassette_user
     name: kassette
     password: password
