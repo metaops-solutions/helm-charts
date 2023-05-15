@@ -13,7 +13,7 @@ image:
 
 config:
   database:
-    host: localhost
+    host: kassette-server-postgresql-hl
     user: kassette_user
     name: kassette
     password: password
@@ -86,3 +86,20 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+
+
+postgresql:
+  enabled: true
+  global:
+    postgresql:
+      auth:
+        postgresPassword: "postgres"
+        username: "kassette_user"
+        password: "password"
+        database: "kassette"
+  primary:
+    persistence:
+      enabled: false
+
+
