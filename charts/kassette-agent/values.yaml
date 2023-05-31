@@ -5,13 +5,17 @@
 replicaCount: 1
 
 config:
- database:
-  host: localhost
-  user: agent
-  name: camunda
-  password: password
-  port: 5432
-  ssl_mode: disable 
+  database:
+    host: localhost
+    user: agent
+    name: camunda
+    password: password
+    port: 5432
+    ssl_mode: disable 
+  kassette-agent:
+    uid: camunda
+  kassette-server:
+    url: http://localhost:8080
 
 image:
   repository: metaops/kassette-agent
