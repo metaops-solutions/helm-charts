@@ -14,6 +14,16 @@ entries:
   kassette-agent:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2023-05-31T12:50:23.675046751Z"
+    description: A Helm chart for Kubernetes
+    digest: 76ae9d7d877c4f7e5feabce567cbd07df5f45bf8a1968df78df914731f0b374f
+    name: kassette-agent
+    type: application
+    urls:
+    - https://github.com/metaops-solutions/helm-charts/releases/download/kassette-agent-0.1.3/kassette-agent-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2023-05-15T15:52:55.773651662Z"
     description: A Helm chart for Kubernetes
     digest: 52174479c77b8ee78199796125249d6c3f80255ce31f6dd9590dbe34a59b63b5
@@ -43,6 +53,21 @@ entries:
     - https://github.com/metaops-solutions/helm-charts/releases/download/kassette-agent-0.1.0/kassette-agent-0.1.0.tgz
     version: 0.1.0
   kassette-server:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2023-05-31T12:50:23.839614006Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.4.2
+    description: A Helm chart for Kubernetes
+    digest: 4215cb767214d9e23ec2842dbb2ac878d67d913ff282ca093a02a9bd6c1bb0fd
+    name: kassette-server
+    type: application
+    urls:
+    - https://github.com/metaops-solutions/helm-charts/releases/download/kassette-server-0.2.4/kassette-server-0.2.4.tgz
+    version: 0.2.4
   - apiVersion: v2
     appVersion: 0.0.1
     created: "2023-05-17T11:58:15.967467453Z"
@@ -148,4 +173,4 @@ entries:
     urls:
     - https://github.com/metaops-solutions/helm-charts/releases/download/kassette-server-0.1.0/kassette-server-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-17T11:58:15.967850273Z"
+generated: "2023-05-31T12:50:23.839655407Z"
