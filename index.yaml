@@ -173,4 +173,15 @@ entries:
     urls:
     - https://github.com/metaops-solutions/helm-charts/releases/download/kassette-server-0.1.0/kassette-server-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-31T12:50:23.839655407Z"
+  kassette-transformer:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2023-06-03T20:51:33.516570508Z"
+    description: A Helm chart for Kubernetes
+    digest: e9e06ff9156c7d0499d7360c5b96731a5e19e96816a06253b7295626a08a99e1
+    name: kassette-transformer
+    type: application
+    urls:
+    - https://github.com/metaops-solutions/helm-charts/releases/download/kassette-transformer-0.1.0/kassette-transformer-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-06-03T20:51:33.516601409Z"
