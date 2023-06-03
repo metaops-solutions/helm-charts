@@ -26,6 +26,7 @@ config:
     maxDBWriterProcess: 4
     maxReqSizeInKB: 1000000
     maxWebReqQSize: 1
+    allowReqsWithoutUserIDAndAnonymousID: true
   router:
     jobQueryBatchSize: 10
     updateStatusBatchSize: 10
