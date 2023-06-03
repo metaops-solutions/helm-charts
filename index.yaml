@@ -55,6 +55,21 @@ entries:
   kassette-server:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2023-06-03T21:04:22.292708081Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.4.2
+    description: A Helm chart for Kubernetes
+    digest: 945eeda011b2d563338e674c9aa5be0c6c0ea64df17616d2650ee44a019ac116
+    name: kassette-server
+    type: application
+    urls:
+    - https://github.com/metaops-solutions/helm-charts/releases/download/kassette-server-0.2.5/kassette-server-0.2.5.tgz
+    version: 0.2.5
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2023-05-31T12:50:23.839614006Z"
     dependencies:
     - condition: postgresql.enabled
@@ -176,6 +191,16 @@ entries:
   kassette-transformer:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2023-06-03T21:04:22.421862362Z"
+    description: A Helm chart for Kubernetes
+    digest: d14e355f71438fcb0a618458b7ec1b4a8ace858389021d68e3be200105e329fa
+    name: kassette-transformer
+    type: application
+    urls:
+    - https://github.com/metaops-solutions/helm-charts/releases/download/kassette-transformer-0.1.1/kassette-transformer-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2023-06-03T20:51:33.516570508Z"
     description: A Helm chart for Kubernetes
     digest: e9e06ff9156c7d0499d7360c5b96731a5e19e96816a06253b7295626a08a99e1
@@ -184,4 +209,4 @@ entries:
     urls:
     - https://github.com/metaops-solutions/helm-charts/releases/download/kassette-transformer-0.1.0/kassette-transformer-0.1.0.tgz
     version: 0.1.0
-generated: "2023-06-03T20:51:33.516601409Z"
+generated: "2023-06-03T21:04:22.421908962Z"
