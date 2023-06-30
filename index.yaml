@@ -234,4 +234,15 @@ entries:
     urls:
     - https://github.com/metaops-solutions/helm-charts/releases/download/kassette-transformer-0.1.0/kassette-transformer-0.1.0.tgz
     version: 0.1.0
-generated: "2023-06-27T15:16:00.188007974Z"
+  ui-dashboard:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2023-06-30T08:36:35.610204051Z"
+    description: A Helm chart for Kubernetes
+    digest: 75856db1a133b650f6e3316995d64f109b722d440848ad04a4cccee679ec3d35
+    name: ui-dashboard
+    type: application
+    urls:
+    - https://github.com/metaops-solutions/helm-charts/releases/download/ui-dashboard-0.1.3/ui-dashboard-0.1.3.tgz
+    version: 0.1.3
+generated: "2023-06-30T08:36:35.610250151Z"
