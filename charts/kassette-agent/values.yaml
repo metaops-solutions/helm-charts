@@ -12,10 +12,19 @@ config:
     password: password
     port: 5432
     ssl_mode: disable 
+    batch_size: 100
   kassette-agent:
     uid: camunda
   kassette-server:
     url: http://localhost:8080
+    batch_size: 10
+  tables:
+    act_hi_actinst:
+      track_column: start_time_
+      id_column: id_
+    act_hi_detail:
+      track_column: time_
+      id_column: id_
 
 image:
   repository: metaops/kassette-agent
