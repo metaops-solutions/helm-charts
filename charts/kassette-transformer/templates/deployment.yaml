@@ -41,7 +41,7 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
           - name: config
-            mountPath: "/opt/kassette-ai/.env"
+            mountPath: "/opt/kassette-ai/kassette-transformer/.env"
             subPath: env
       volumes:
       - name: config
