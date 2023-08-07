@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "kassette-transformer.fullname" . }}-config
+  labels:
+    {{- include "kassette-transformer.labels" . | nindent 4 }}
+data:
+  env: |
+    {{- range $k, $v := .Values.config.env }}
+    {{ $k }}={{ $v }}
+    {{end}}

@@ -39,6 +39,14 @@ spec:
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+          - name: config
+            mountPath: "/opt/kassette-ai/.env"
+            subPath: env
+      volumes:
+      - name: config
+        configMap:
+          name: {{ include "kassette-transformer.fullname" . }}-config
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
