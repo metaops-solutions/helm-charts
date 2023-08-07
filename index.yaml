@@ -226,6 +226,16 @@ entries:
   kassette-transformer:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2023-08-07T14:27:50.342651664Z"
+    description: A Helm chart for Kubernetes
+    digest: bac714f9c01ffbcf320a672314171de2cf5734b97bc9d35d435497e86568d76d
+    name: kassette-transformer
+    type: application
+    urls:
+    - https://github.com/metaops-solutions/helm-charts/releases/download/kassette-transformer-0.1.4/kassette-transformer-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2023-08-07T14:08:42.249823136Z"
     description: A Helm chart for Kubernetes
     digest: a8b7409102f95229dd490aeafdbaf95da2bf1dfb5cad162549cdb0b10cfde0d1
@@ -275,4 +285,4 @@ entries:
     urls:
     - https://github.com/metaops-solutions/helm-charts/releases/download/ui-dashboard-0.1.3/ui-dashboard-0.1.3.tgz
     version: 0.1.3
-generated: "2023-08-07T14:08:42.249870136Z"
+generated: "2023-08-07T14:27:50.342776166Z"
