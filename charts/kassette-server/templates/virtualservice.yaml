@@ -1,0 +1,19 @@
+{{ if .Values.ingress.enable }}
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: {{ include "kassette-server.fullname" . }}
+spec:
+  hosts: 
+    {{- .Values.ingress.hosts | toYaml| nindent 4 }}
+  gateways:
+    {{- .Values.ingress.gateways |toYaml| nindent 4 }}
+  http:
+  - name: http
+    route:
+    - destination:
+        port:
+          number: {{ .Values.service.port }}
+        host: {{ include "kassette-server.fullname" . }}
+{{ end }}

@@ -54,6 +54,13 @@ config:
   serverPort: 8088
 
 
+ingress:
+  enable: false
+  gateways: 
+    - istio-system/my-ingress
+  hosts: 
+    - my-public-url
+
 
 
 
