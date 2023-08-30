@@ -42,15 +42,9 @@ config:
     useTestSink: false
     maxFailedCountForJob: 3
     testSinkURL: http://localhost:8080/testSink
-  warehouse:
-    host: kassette-server-postgresql-hl
-    user: kassette_user
-    name: warehouse
-    password: password
-    port: 5432
-    ssl_mode: disable
-
   logLevel: INFO
+  jobdb:
+    maxDSJobs: 10
   serverPort: 8088
 
 
