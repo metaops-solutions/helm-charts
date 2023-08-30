@@ -75,6 +75,21 @@ entries:
   kassette-server:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2023-08-30T12:56:21.792090685Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.4.2
+    description: A Helm chart for Kubernetes
+    digest: 9e17c231f8862719dd34698422565749503153af7b8516378c5dd1aeeb180989
+    name: kassette-server
+    type: application
+    urls:
+    - https://github.com/metaops-solutions/helm-charts/releases/download/kassette-server-0.2.8/kassette-server-0.2.8.tgz
+    version: 0.2.8
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2023-08-08T10:28:17.24907409Z"
     dependencies:
     - condition: postgresql.enabled
@@ -300,4 +315,4 @@ entries:
     urls:
     - https://github.com/metaops-solutions/helm-charts/releases/download/ui-dashboard-0.1.3/ui-dashboard-0.1.3.tgz
     version: 0.1.3
-generated: "2023-08-08T10:28:17.249222294Z"
+generated: "2023-08-30T12:56:21.792156887Z"
