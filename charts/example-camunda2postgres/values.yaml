@@ -2,8 +2,8 @@
 
 kassette-server:
   enabled: true
-    image:
-      tag: v1.1.0
+  image:
+    tag: v1.1.0
   ingress:
     enable: false
   config:
