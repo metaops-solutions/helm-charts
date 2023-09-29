@@ -72,6 +72,17 @@ entries:
     urls:
     - https://github.com/metaops-solutions/helm-charts/releases/download/kassette-agent-0.1.0/kassette-agent-0.1.0.tgz
     version: 0.1.0
+  kassette-camunda-agent:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2023-09-29T15:08:44.8257828Z"
+    description: A Helm chart for Kubernetes
+    digest: 120b0965c17c243fc411521992c544fa94fa8a41341e689ec85b0c679f7e2e46
+    name: kassette-camunda-agent
+    type: application
+    urls:
+    - https://github.com/metaops-solutions/helm-charts/releases/download/kassette-camunda-agent-0.1.1/kassette-camunda-agent-0.1.1.tgz
+    version: 0.1.1
   kassette-server:
   - apiVersion: v2
     appVersion: 0.0.1
@@ -315,4 +326,4 @@ entries:
     urls:
     - https://github.com/metaops-solutions/helm-charts/releases/download/ui-dashboard-0.1.3/ui-dashboard-0.1.3.tgz
     version: 0.1.3
-generated: "2023-08-30T12:56:21.792156887Z"
+generated: "2023-09-29T15:08:44.825951302Z"
