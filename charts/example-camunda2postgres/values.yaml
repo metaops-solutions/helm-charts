@@ -1,0 +1,50 @@
+---
+
+kassette-server:
+  enabled: true
+    image:
+      tag: v1.1.0
+  ingress:
+    enable: false
+  config:
+    jobdb:
+      maxRetryNumber: 10
+
+
+
+postgresql:
+  enabled: true
+  global:
+    postgresql:
+      auth:
+        postgresPassword: "postgres"
+        username: "kassette_user"
+        password: "password"
+        database: "kassette"
+  primary:
+    persistence:
+      enabled: false
+    initdb:
+      scripts: 
+        init.sql: |
+          CREATE DATABASE warehouse;
+          GRANT ALL PRIVILEGES ON DATABASE warehouse TO kassette_user;
+
+kassette-camunda-agent:         
+  enabled: true
+  image:
+    tag: v1.1.0
+  config:
+    database:
+      userr: camundadiy
+      password: camundadiy
+      host: postgres-postgresql-hl.camunda-diy.svc
+      name: regworkflow
+    kassette-server:
+      url: 'http://kassette-server'
+    kassette-agent:
+      customerName: Camunda_Customer
+      secretKey: somesecret
+      camundaPollInterval: 1
+
+
