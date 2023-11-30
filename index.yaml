@@ -340,6 +340,17 @@ entries:
     urls:
     - https://github.com/metaops-solutions/helm-charts/releases/download/kassette-transformer-0.1.0/kassette-transformer-0.1.0.tgz
     version: 0.1.0
+  metabase:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-11-30T12:07:38.44407924Z"
+    description: A Helm chart to run metabase on Kubernetes
+    digest: 7ebccc02d24d0e861d579aed4a3326e43e70f06bdf5e9f64c75811b8518998e9
+    name: metabase
+    type: application
+    urls:
+    - https://github.com/metaops-solutions/helm-charts/releases/download/metabase-0.1.0/metabase-0.1.0.tgz
+    version: 0.1.0
   ui-dashboard:
   - apiVersion: v2
     appVersion: 0.0.1
@@ -351,4 +362,4 @@ entries:
     urls:
     - https://github.com/metaops-solutions/helm-charts/releases/download/ui-dashboard-0.1.3/ui-dashboard-0.1.3.tgz
     version: 0.1.3
-generated: "2023-09-29T16:07:30.401657035Z"
+generated: "2023-11-30T12:07:38.444140033Z"
