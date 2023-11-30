@@ -37,8 +37,8 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
-          {{- range $k, $v := .Values.deployment.env }}
           env:
+          {{- range $k, $v := .Values.deployment.env }}
             - name: {{ $k }}
               value: {{ $v }}
           {{- end }}
