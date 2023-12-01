@@ -40,7 +40,7 @@ spec:
           env:
           {{- range $k, $v := .Values.deployment.env }}
             - name: {{ $k }}
-              value: {{ $v }}
+              value: "{{ $v }}"
           {{- end }}
           livenessProbe:
             httpGet:
