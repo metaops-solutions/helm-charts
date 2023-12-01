@@ -343,6 +343,16 @@ entries:
   metabase:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-12-01T13:03:44.065004141Z"
+    description: A Helm chart to run metabase on Kubernetes
+    digest: 29a90bf30967e8871e7900351a4f26a780ac4b833a02cb5be97978339d7353b1
+    name: metabase
+    type: application
+    urls:
+    - https://github.com/metaops-solutions/helm-charts/releases/download/metabase-0.1.5/metabase-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-12-01T11:02:33.230035345Z"
     description: A Helm chart to run metabase on Kubernetes
     digest: bc412dcba81d05e550edf9b21ae7a7b30f5a8715509253cfeee5c9328d1d443c
@@ -402,4 +412,4 @@ entries:
     urls:
     - https://github.com/metaops-solutions/helm-charts/releases/download/ui-dashboard-0.1.3/ui-dashboard-0.1.3.tgz
     version: 0.1.3
-generated: "2023-12-01T11:02:33.230105256Z"
+generated: "2023-12-01T13:03:44.065067058Z"
