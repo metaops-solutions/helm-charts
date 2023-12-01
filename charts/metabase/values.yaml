@@ -11,7 +11,7 @@ image:
   tag: "latest"
 
 
-deployment:    
+statefulSet:    
   env:
     MB_DB_TYPE: postgres
     MB_DB_DBNAME: metabase

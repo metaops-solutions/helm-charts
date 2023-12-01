@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "metabase.fullname" . }}
   labels:
@@ -11,6 +11,7 @@ spec:
   selector:
     matchLabels:
       {{- include "metabase.selectorLabels" . | nindent 6 }}
+  serviceName: {{ include "metabase.fullname" . }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -38,7 +39,7 @@ spec:
               containerPort: 80
               protocol: TCP
           env:
-          {{- range $k, $v := .Values.deployment.env }}
+          {{- range $k, $v := .Values.statefulSet.env }}
             - name: {{ $k }}
               value: "{{ $v }}"
           {{- end }}
